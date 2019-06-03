@@ -1,12 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+/*global chrome*/
 
-ReactDOM.render(<App />, document.getElementById('root'));
+chrome.storage.sync.get(["qouterQuotes"], result => {
+  const quotes = result["qouterQuotes"] || [];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+  chrome.storage.sync.get(["qouterRegex"], result => {
+    const regex = result["qouterRegex"] || { text: "", options: "gi" };
+    ReactDOM.render(
+      <App quotes={quotes} regex={regex} />,
+      document.getElementById("root")
+    );
+  });
+});
 serviceWorker.unregister();

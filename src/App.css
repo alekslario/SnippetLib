@@ -1,33 +1,120 @@
+* {
+  box-sizing: border-box;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  min-width: 600px;
+  max-width: 800px;
+  background-color: #fff;
+  box-sizing: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  flex-direction: column;
+  overflow-x: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 15px 0;
+  width: 100%;
+}
+.search_bar {
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 300px;
+  height: 40px;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+input {
+  font: inherit;
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  border: 0;
+  height: 1.1875em;
+  margin: 0;
+  padding: 6px 0 7px;
+  display: block;
+  min-width: 0;
+  box-sizing: content-box;
+  background: none;
+}
+input:focus {
+  outline: none;
+}
+.slash {
+  padding: 0 5px 0 5px;
+  font-size: 25px;
+  line-height: 120%;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.54);
+}
+.inputOptions {
+  width: 30px;
+}
+.fas {
+  padding-left: 5px;
+  color: rgba(0, 0, 0, 0.34);
+  cursor: pointer;
+}
+.fas:hover {
+  color: rgba(0, 0, 0, 0.54);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-item {
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+.link-icon {
+  position: relative;
+  display: table;
+}
+.url-tooltip {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  background-color: #fff;
+  color: #4468e2;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: rgba(0, 0, 0, 0.4) 1px solid;
+  padding: 6px;
+  border-radius: 5px;
+  left: 10px;
+}
+.link-icon:hover .url-tooltip {
+  visibility: visible;
+}
+.fa-external-link-alt:hover {
+  color: #4468e2;
 }
